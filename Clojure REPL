@@ -1,0 +1,103 @@
+REPL Instructions
+
+Code can be entered at the bottom and executed by pressing shift+enter.
+
+Try it now by typing (+ 1 1) in the bottom section and pressing shift+enter.
+
+Working in another Clojure file and sending forms to the REPL is the most efficient way to work. Use the following key bindings to send code to the REPL. See the settings for more keybindings.
+
+ctrl-alt-, then b
+Execute block. Finds the block of Clojure code your cursor is in and executes that.
+
+ctrl-alt-, s
+Executes the selection. Sends the selected text to the REPL.
+
+You can disable this help text in the settings.
+Atom Ink does not appear to be installed. Install it to get a better REPL experience.
+Starting REPL with lein in /home/docker/MyFolder/projects/guestbook
+2016-12-19 17:02:36,573 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+nREPL server started on port 40917 on host 127.0.0.1 - nrepl://127.0.0.1:40917
+Refreshing code...
+:reloading (guestbook.dev-middleware guestbook.config guestbook.db.core guestbook.env guestbook.layout guestbook.middleware guestbook.routes.home guestbook.handler guestbook.core guestbook.test.handler user guestbook.test.db.core)
+Refresh complete
+(+ 1 1)
+user=>
+2
+(db/save-message! {:name "dsfsadf", :message "Sdafdsafdsaf", :timestamp (java.util.Date.)})
+IllegalArgumentException db-spec mount.core.DerefableState@509b7b17 is missing a required parameter  clojure.java.jdbc/get-connection (jdbc.clj:309)
+(db/get-messages)
+IllegalArgumentException db-spec mount.core.DerefableState@509b7b17 is missing a required parameter  clojure.java.jdbc/get-connection (jdbc.clj:309)
+Loading File /home/docker/MyFolder/projects/guestbook/src/clj/guestbook/core.clj
+user=>
+#'guestbook.core/-main
+(-main)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: -main in this context, compiling:(/home/docker/MyFolder/projects/guestbook/src/clj/guestbook/routes/home.clj:1:5)
+(guestbook.core/-main)
+read config from resource: "config.edn"
+read config from file: ".lein-env"
+2016-12-19 17:04:50,593 [nREPL-worker-2] INFO  guestbook.env -
+-=[guestbook started successfully using the development profile]=-
+2016-12-19 17:04:50,723 [nREPL-worker-2] INFO  luminus.http-server - starting HTTP server on port 3000
+2016-12-19 17:04:50,930 [nREPL-worker-2] INFO  org.xnio - XNIO version 3.3.6.Final
+2016-12-19 17:04:51,148 [nREPL-worker-2] INFO  org.projectodd.wunderboss.web.Web - Registered web context /
+2016-12-19 17:04:51,150 [nREPL-worker-2] INFO  luminus.repl-server - starting nREPL server on port 7000
+2016-12-19 17:04:51,157 [nREPL-worker-2] INFO  guestbook.core - #'guestbook.config/env started
+2016-12-19 17:04:51,157 [nREPL-worker-2] INFO  guestbook.core - #'guestbook.db.core/*db* started
+2016-12-19 17:04:51,157 [nREPL-worker-2] INFO  guestbook.core - #'guestbook.handler/init-app started
+2016-12-19 17:04:51,157 [nREPL-worker-2] INFO  guestbook.core - #'guestbook.core/http-server started
+2016-12-19 17:04:51,158 [nREPL-worker-2] INFO  guestbook.core - #'guestbook.core/repl-server started
+user=>
+nil
+(db/get-messages)
+guestbook.routes.home=>
+({:id 1, :name "aSDSADf", :message "dafdsafsafdg", :timestamp #inst "2016-12-19T22:44:09.706000000-00:00"} {:id 2, :name "sadgfdsafg", :message "safdgfdsag", :timestamp #inst "2016-12-19T22:44:13.949000000-00:00"})
+(db/save-message! {:name "dsfsadf", :message "Sdafdsafdsaf", :timestamp (java.util.Date.)})
+guestbook.routes.home=>
+1
+(db/save-message! {:name "dsfsadf", :message "Sdafdsafdsaf", :timestamp (java.util.Date.)})
+guestbook.routes.home=>
+1
+(db/get-messages)
+guestbook.routes.home=>
+({:id 1, :name "aSDSADf", :message "dafdsafsafdg", :timestamp #inst "2016-12-19T22:44:09.706000000-00:00"} {:id 2, :name "sadgfdsafg", :message "safdgfdsag", :timestamp #inst "2016-12-19T22:44:13.949000000-00:00"} {:id 3, :name "dsfsadf", :message "Sdafdsafdsaf", :timestamp #inst "2016-12-19T23:05:58.078000000-00:00"} {:id 4, :name "dsfsadf", :message "Sdafdsafdsaf", :timestamp #inst "2016-12-19T23:06:02.007000000-00:00"})
+(require '[clojure.pprint :refer pprint])
+Exception :only/:refer value must be a sequential collection of symbols  clojure.core/refer (core.clj:4112)
+(require '[clojure.pprint :as pp])
+guestbook.routes.home=>
+nil
+(in-ns 'guestbook.routes.home)
+guestbook.routes.home=>
+#object[clojure.lang.Namespace 0x27ca3cd0 "guestbook.routes.home"]
+(in-ns 'guestbook.db.core)
+guestbook.db.core=>
+#object[clojure.lang.Namespace 0x3ab5643d "guestbook.db.core"]
+(pp/pprint (get-messages))
+CompilerException java.lang.RuntimeException: No such namespace: pp, compiling:(/home/docker/MyFolder/projects/guestbook/src/clj/guestbook/routes/home.clj:1:5)
+(pp (get-messages))
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: pp in this context, compiling:(/home/docker/MyFolder/projects/guestbook/src/clj/guestbook/routes/home.clj:1:5)
+(require '[clojure.pprint :as pp])
+guestbook.db.core=>
+nil
+(pp (get-messages))
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: pp in this context, compiling:(/home/docker/MyFolder/projects/guestbook/src/clj/guestbook/routes/home.clj:1:5)
+(pp/pprint (get-messages))
+({:id 1,
+  :name "aSDSADf",
+  :message "dafdsafsafdg",
+  :timestamp #inst "2016-12-19T22:44:09.706000000-00:00"}
+ {:id 2,
+  :name "sadgfdsafg",
+  :message "safdgfdsag",
+  :timestamp #inst "2016-12-19T22:44:13.949000000-00:00"}
+ {:id 3,
+  :name "dsfsadf",
+  :message "Sdafdsafdsaf",
+  :timestamp #inst "2016-12-19T23:05:58.078000000-00:00"}
+ {:id 4,
+  :name "dsfsadf",
+  :message "Sdafdsafdsaf",
+  :timestamp #inst "2016-12-19T23:06:02.007000000-00:00"})
+guestbook.db.core=>
+nil
+-------------------
+clear
